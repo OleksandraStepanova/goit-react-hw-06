@@ -24,19 +24,12 @@ const persistedContactsReduser = persistReducer(
   contactsReduser
 );
 
-const persistedFiltersReduser = persistReducer(
-  {
-    key: 'selectedLang',
-    storage,
-    whitelist: ['name'],
-  },
-  filtersReduser
-);
+
 
 export const store = configureStore({
     reducer: {
         contacts: persistedContactsReduser,
-        filters: persistedFiltersReduser,
+        filters: filtersReduser,
     },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
