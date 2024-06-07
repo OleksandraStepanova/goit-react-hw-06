@@ -6,9 +6,8 @@ export default function SearchBox() {
 
     const filter = useSelector(selectNameFilter);
     const dispatch = useDispatch();    
-    const handleFilter = e => {
-        dispatch(changeFilter(e.target.value.trim()))        
-    }
+    const handleFilter = e => dispatch(changeFilter(e.target.value.trim()))        
+    
     return (
         <>
             <h2>Find contact by name</h2>
